@@ -1,0 +1,37 @@
+students = []
+
+def add_student():
+    name = input("Enter name: ")
+    age = input("Enter age: ")
+    students.append({"name": name, "age": age})
+    print("Student added successfully!")
+
+def view_students():
+    for i, student in enumerate(students):
+        print(i, student)
+
+def update_student():
+    index = int(input("Enter index to update: "))
+    students[index]["name"] = input("New name: ")
+    students[index]["age"] = input("New age: ")
+    print("Updated!")
+
+def delete_student():
+    index = int(input("Enter index to delete: "))
+    students.pop(index)
+    print("Deleted!")
+
+while True:
+    print("\n1.Add 2.View 3.Update 4.Delete 5.Exit")
+    choice = input("Choose: ")
+
+    if choice == "1":
+        add_student()
+    elif choice == "2":
+        view_students()
+    elif choice == "3":
+        update_student()
+    elif choice == "4":
+        delete_student()
+    elif choice == "5":
+        break
